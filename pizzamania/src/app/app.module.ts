@@ -10,6 +10,7 @@ import { CommandeComponent } from './commande/commande.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { RecapComponent } from './recap/recap.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

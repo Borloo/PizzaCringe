@@ -3,6 +3,8 @@ import { PizzaService } from '../pizza.service';
 import { OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { cfg } from 'src/config';
+import { Router } from '@angular/router';
+import { RecapComponent } from '../recap/recap.component';
 
 export class formModelPizza {
   hasAnchois = false;
@@ -58,20 +60,37 @@ export class formModelPizza {
 export class CommandeComponent implements OnInit{
   pizza: formModelPizza = new formModelPizza();
   isLoading = false;
-  constructor(private PizzaService: PizzaService){}
+  constructor(private router:Router ,private PizzaService: PizzaService){}
   ngOnInit(): void {}
   public commander(){
-    this.PizzaService.test().subscribe(
-      (next) => this.onCallSuccess(next),
-      (err) => this.onCallError(err)
+    this.PizzaService.commanderPizza(this).subscribe(
+      (next) => {
+        setTimeout(() => {
+          //let url = ["http://localhost:4200/recap"]
+          this.onCallSuccess(next)
+          //this.router.navigate(['http://localhost:4200/recap'])
+        }, 500);
+        
+      },
+      (err) => {
+        setTimeout(() => {
+          //let url = ["http://localhost:4200/recap"]
+          this.onCallError(err)
+          //this.router.navigate(['http://localhost:4200/recap'])
+        }, 500);
+      }
     )
     this.isLoading = true;
   }
   public onCallSuccess(data: any){
     this.isLoading = false;
+    console.log(data.id)
+    cfg.id = data.id
+    return this.router.navigate(['recap'])
   }
   public onCallError(err: HttpErrorResponse){
     this.isLoading = false;
+   return this.router.navigate(['recap'])
   }
 
 }
