@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { PizzaService } from '../pizza.service';
 import { OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
+import { cfg } from 'src/config';
 
 export class formModelPizza {
   hasAnchois = false;
@@ -9,18 +10,40 @@ export class formModelPizza {
   hasMagret = false;
   hasMiel = false;
   base ="T";
+  
   constructor(){}
 
 
   prix(): number{
-    let prix = 0;
-    if(this.base == "T") {prix = prix+3}
-    if(this.base == "C")prix = prix+4
-    if(this.hasAnchois)prix = prix+1
-    if(this.hasJambon)prix = prix+2
-    if(this.hasMagret)prix = prix+4
-    if(this.hasMiel)prix = prix+3
-    return prix
+    cfg.prix = 0
+    cfg.ingredients = []
+    if(this.base == "T") {
+      cfg.prix = cfg.prix+3
+      cfg.base = "Tomate"
+    }
+    if(this.base == "C"){
+      cfg.prix = cfg.prix+4
+      cfg.base = "Creme"
+    }
+    if(this.hasAnchois){
+      cfg.prix = cfg.prix+1
+      cfg.ingredients.push('Anchois')
+    }
+    if(this.hasJambon){
+      cfg.prix = cfg.prix+2
+      cfg.ingredients.push('Jambon')
+    }
+    if(this.hasMagret){
+      cfg.prix = cfg.prix+4
+      cfg.ingredients.push('Magret')
+    }
+
+    if(this.hasMiel){
+      cfg.prix = cfg.prix+3
+      cfg.ingredients.push('Miel')
+    }
+    
+    return cfg.prix
   }
   isFormulaireValid():boolean{
     return this.hasMiel || this.hasAnchois || this.hasJambon || this.hasMagret;
