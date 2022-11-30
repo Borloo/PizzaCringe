@@ -16,4 +16,14 @@ thead {
 tbody {
   text-align: center;
   border: solid black;
+  margin-bottom: 3%;
+  margin-top: 3%;
+}
+table {
+  margin : auto;
+  padding-right: 50%;
+  background-color: lightgrey;
+}
+#title {
+  color : orange;
 }
