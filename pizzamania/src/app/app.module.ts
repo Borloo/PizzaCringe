@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { PizzasComponent} from "./pizza/pizza.component";
 import { CommandeComponent } from './commande/commande.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { RecapComponent } from './recap/recap.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PizzasComponent,
     CommandeComponent,
-    AccueilComponent
+    AccueilComponent,
+    RecapComponent
   ],
   imports: [
     BrowserModule,
