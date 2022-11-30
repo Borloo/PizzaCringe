@@ -28,9 +28,9 @@ export class formModelPizza {
 }
 
 @Component({
-  selector: 'app-ecran-commande',
-  templateUrl: './ecran-commande.component.html',
-  styleUrls: ['./ecran-commande.component.css']
+  selector: 'app-commande',
+  templateUrl: './commande.component.html',
+  styleUrls: ['./commande.component.css']
 })
 export class CommandeComponent implements OnInit{
   pizza: formModelPizza = new formModelPizza();

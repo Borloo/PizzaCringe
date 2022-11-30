@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-pizzas',
-  templateUrl: './pizzas.component.html',
-  styleUrls: ['./pizzas.component.css']
+  selector: 'app-pizza',
+  templateUrl: './pizza.component.html',
+  styleUrls: ['./pizza.component.css']
 })
 export class PizzasComponent  {
 
