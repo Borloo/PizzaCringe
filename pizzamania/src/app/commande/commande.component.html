@@ -1,0 +1,48 @@
+<form #formulaire="ngForm">
+  <div class="row">
+    <div class="col-sm">
+      <h4>Base</h4>
+    </div>
+    <div class="col-sm">
+      <div class="row">
+        <div class="col">
+          <input id="tomate" type="radio" name="tomate"  [(ngModel)]="pizza.base" value="T">Tomate 3€<br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <input type="radio" name="creme"  [(ngModel)]="pizza.base" value="C">Crème 4€
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="row">
+      <h4>Ingrédients</h4>
+    </div>
+    <div class="row">
+      <div class="row">
+        <div class="col-sm-6">
+          <input id="anchois" type="checkbox" name="ingrédients" [(ngModel)]="pizza.hasAnchois"> Anchois 1€
+        </div>
+        <div class="col-sm-6">
+          <input id="jambon" type="checkbox" name="ingrédients" [(ngModel)]="pizza.hasJambon"> Jambon 2€
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <input id="miel" type="checkbox" name="ingrédients" [(ngModel)]="pizza.hasMiel"> Miel 3€
+        </div>
+        <div class="col-sm-6">
+          <input id="magret" type="checkbox" name="ingrédients" [(ngModel)]="pizza.hasMagret"> Magret 4€
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <p id="prix">Prix Final = {{pizza.prix()}} €</p>
+  </div>
+  <div class="row">
+    <input id="submit" type="submit"  [disabled]="!pizza.isFormulaireValid()" name="commander" (click)="commander()" value="Commander">
+  </div>
+</form>

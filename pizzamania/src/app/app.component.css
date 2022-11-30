@@ -1,0 +1,19 @@
+p {
+  color: aqua;
+}
+tfoot {
+  text-align: center;
+  border: solid black;
+  margin-bottom: 3%;
+  margin-top: 3%;
+}
+thead {
+  text-align: center;
+  border: solid black;
+  margin-bottom: 3%;
+  margin-top: 3%;
+}
+tbody {
+  text-align: center;
+  border: solid black;
+}
