@@ -9,3 +9,6 @@ h4 {
 p#prix {
   text-align: center;
 }
+#loader {
+  background-color: lightgrey;
+}
