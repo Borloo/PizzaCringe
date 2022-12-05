@@ -11,6 +11,7 @@ export class RecapComponent {
   prix = cfg.prix;
   base = cfg.base;
   ingredients = cfg.ingredients;
+  id = cfg.id
   constructor(private router:Router){ }
 
   public goToRecap(){
@@ -19,5 +20,9 @@ export class RecapComponent {
 
   public getPrix(){
     console.log(cfg.prix)
+  }
+
+  public setId(pId: number){
+    this.id = pId
   }
 }

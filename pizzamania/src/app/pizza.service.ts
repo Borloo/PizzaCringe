@@ -1,6 +1,8 @@
 import {Injectable, OnInit} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {Observable} from "rxjs";
+import { PizzasComponent } from './pizza/pizza.component';
+import { CommandeComponent } from './commande/commande.component';
 
 
 @Injectable({
@@ -14,7 +16,19 @@ export class PizzaService {
   public test(): Observable<any> {
     return this.http.get(this.url+"/test")
   }
-  public getPizzas(){
-
+  public commanderPizza(commande : CommandeComponent): Observable<any> {
+    return this.http.get(
+      this.url+ 
+      "/boutique/commanderPizza?base="+ 
+      commande.pizza.base + 
+      "&anchois=" + 
+      commande.pizza.hasAnchois + 
+      "&jambon=" + 
+      commande.pizza.hasJambon + 
+      "&miel=" +
+      commande.pizza.hasMiel +
+      "&magret=" + 
+      commande.pizza.hasMagret
+      )
   }
 }
