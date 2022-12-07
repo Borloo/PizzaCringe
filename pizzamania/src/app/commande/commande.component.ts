@@ -5,6 +5,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { cfg } from 'src/config';
 import { Router } from '@angular/router';
 import { RecapComponent } from '../recap/recap.component';
+import {Pizza} from "../pizza/pizza.component";
 
 export class formModelPizza {
   hasAnchois = false;
@@ -86,11 +87,22 @@ export class CommandeComponent implements OnInit{
     this.isLoading = false;
     cfg.isSuccess = true;
     cfg.id = data.id
+    cfg.isAlreadyCommand = true;
+
+    let pizza = new Pizza(cfg.base, cfg.ingredients, cfg.prix);
+
+    window.localStorage.setItem('pizza', JSON.stringify(pizza));
+
     return this.router.navigate(['recap'])
   }
   public onCallError(err: HttpErrorResponse){
     console.log(err);
     this.isLoading = false;
+    cfg.isAlreadyCommand = true;
+
+    let pizza = new Pizza(cfg.base, cfg.ingredients, cfg.prix);
+
+    window.localStorage.setItem('pizza', JSON.stringify(pizza));
     return this.router.navigate(['recap'])
   }
 

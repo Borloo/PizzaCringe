@@ -7,20 +7,12 @@ import { Component } from '@angular/core';
 })
 export class PizzasComponent  {
 
-  pizzas = [
-    new Pizza ("Chevre-Miel",8),
-    new Pizza ("Bolognaise",12)
-  ]
-
-  jedi = "";
-  taille= 5;
-  username=""
   constructor () {}
 }
 
-class Pizza {
+export class Pizza {
 
-  constructor(public nom: string, public prix :number = 10) {
+  constructor(public base: string, public ingredient: Array<any>, public prix: number) {
 
   }
   public incrementerPrix () {
