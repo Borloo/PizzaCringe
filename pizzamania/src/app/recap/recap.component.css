@@ -1,0 +1,9 @@
+a.btn-primary {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2%;
+  background-color: orange;
+  color: black;
+  border-color: orangered;
+}

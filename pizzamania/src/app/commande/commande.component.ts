@@ -11,8 +11,9 @@ export class formModelPizza {
   hasJambon = false;
   hasMagret = false;
   hasMiel = false;
-  base ="T";
-  
+  base = "T";
+  isSuccess = false
+
   constructor(){}
 
 
@@ -44,7 +45,7 @@ export class formModelPizza {
       cfg.prix = cfg.prix+3
       cfg.ingredients.push('Miel')
     }
-    
+
     return cfg.prix
   }
   isFormulaireValid():boolean{
@@ -60,37 +61,37 @@ export class formModelPizza {
 export class CommandeComponent implements OnInit{
   pizza: formModelPizza = new formModelPizza();
   isLoading = false;
+  isSuccess = false;
   constructor(private router:Router ,private PizzaService: PizzaService){}
   ngOnInit(): void {}
   public commander(){
     this.PizzaService.commanderPizza(this).subscribe(
       (next) => {
         setTimeout(() => {
-          //let url = ["http://localhost:4200/recap"]
-          this.onCallSuccess(next)
-          //this.router.navigate(['http://localhost:4200/recap'])
+          this.isSuccess = true
+          this.onCallSuccess(next);
         }, 500);
-        
+
       },
       (err) => {
         setTimeout(() => {
-          //let url = ["http://localhost:4200/recap"]
           this.onCallError(err)
-          //this.router.navigate(['http://localhost:4200/recap'])
         }, 500);
       }
-    )
+    );
     this.isLoading = true;
   }
   public onCallSuccess(data: any){
+    console.log(data);
     this.isLoading = false;
-    console.log(data.id)
+    cfg.isSuccess = true;
     cfg.id = data.id
     return this.router.navigate(['recap'])
   }
   public onCallError(err: HttpErrorResponse){
+    console.log(err);
     this.isLoading = false;
-   return this.router.navigate(['recap'])
+    return this.router.navigate(['recap'])
   }
 
 }

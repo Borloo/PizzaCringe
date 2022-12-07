@@ -44,7 +44,7 @@
       <p id="prix">Prix Final = {{pizza.prix()}} €</p>
     </div>
     <div class="row">
-      <input id="submit" type="submit"  [disabled]="!pizza.isFormulaireValid()" name="commander" (click)="commander()" value="Commander">
+      <input class="btn btn-primary" id="submit" type="submit"  [disabled]="!pizza.isFormulaireValid()" name="commander" (click)="commander()" value="Commander">
     </div>
   </div>
   <div *ngIf="isLoading">

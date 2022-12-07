@@ -1,7 +1,11 @@
-input#submit {
+input.btn-primary {
   width: auto;
-  margin-left: 40%;
-  margin-bottom: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2%;
+  background-color: orange;
+  color: black;
+  border-color: orangered;
 }
 h4 {
   text-align: center;

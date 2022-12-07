@@ -1,3 +1,17 @@
-<p>Base de la pizza : {{this.base}}</p>
-<p>Ingredient : {{this.ingredients}}</p>
-<p>Prix de la Pizza {{this.prix}} €</p>
+<div id="container">
+  <div *ngIf="isSuccess == false">
+    <div class="row">
+      <p>Erreur sur la commande !</p>
+      <p>Veuillez réessayer</p>
+    </div>
+  </div>
+  <div *ngIf="isSuccess == true">
+    <div class="row">
+      <p>Merci d'avoir commandé !</p>
+      <p>Votre numéro de commande est le {{id}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <a class="btn btn-primary" routerLink="/commande">Créer votre pizza!</a>
+  </div>
+</div>
