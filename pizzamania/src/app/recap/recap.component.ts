@@ -12,6 +12,7 @@ export class RecapComponent {
   base = cfg.base;
   ingredients = cfg.ingredients;
   id = cfg.id
+  isSuccess = cfg.isSuccess;
   constructor(private router:Router){ }
 
   public goToRecap(){
@@ -24,5 +25,9 @@ export class RecapComponent {
 
   public setId(pId: number){
     this.id = pId
+  }
+
+  public pageCommander(){
+    return this.router.navigate(['/commande'])
   }
 }
