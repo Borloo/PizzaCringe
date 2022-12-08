@@ -66,6 +66,8 @@ export class CommandeComponent implements OnInit{
   constructor(private router:Router ,private PizzaService: PizzaService){}
   ngOnInit(): void {}
   public commander(){
+    cfg.isLoading = true;
+    this.isLoading = true;
     this.PizzaService.commanderPizza(this).subscribe(
       (next) => {
         setTimeout(() => {
@@ -80,7 +82,6 @@ export class CommandeComponent implements OnInit{
         }, 500);
       }
     );
-    cfg.isLoading = true
   }
   public onCallSuccess(data: any){
     console.log(data);
@@ -98,11 +99,11 @@ export class CommandeComponent implements OnInit{
   public onCallError(err: HttpErrorResponse){
     console.log(err);
     cfg.isLoading = false;
-    // cfg.isAlreadyCommand = true;
+    cfg.isAlreadyCommand = true;
 
-    //let pizza = new Pizza(cfg.base, cfg.ingredients, cfg.prix);
+    let pizza = new Pizza(cfg.base, cfg.ingredients, cfg.prix);
 
-   // window.localStorage.setItem('pizza', JSON.stringify(pizza));
+    window.localStorage.setItem('pizza', JSON.stringify(pizza));
     return this.router.navigate(['recap'])
   }
 

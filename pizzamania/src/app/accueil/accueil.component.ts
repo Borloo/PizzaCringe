@@ -29,6 +29,7 @@ export class AccueilComponent {
   }
 
   public commanderPizzaEnregistrer() {
+    this.isLoading = true
     this.commande.commander();
   }
 }
