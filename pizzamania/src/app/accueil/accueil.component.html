@@ -1,7 +1,24 @@
-<tr>
-  <div class="row">
-    <p>Bienvenue sur Pizza Mania</p>
-    <p>Composer et commander <br>votre pizza en cliquant<br> sur le bouton ci-dessous !</p>
-    <a class="btn btn-primary" routerLink="/commande">Créer votre pizza!</a>
+<div *ngIf="isLoading == false">
+  <div *ngIf="isAlreadyCommand == false">
+    <div class="row">
+      <p>Bienvenue sur Pizza Mania</p>
+      <p>Composer et commander <br>votre pizza en cliquant<br> sur le bouton ci-dessous !</p>
+      <a class="btn btn-primary" routerLink="/commande">Créer votre pizza!</a>
+    </div>
   </div>
-</tr>
+  <div *ngIf="isAlreadyCommand == true">
+    <div class="row">
+      <p>Votre dernière <br/> commande :</p>
+      <p id="list">{{base}},{{ingredients}}</p>
+    </div>
+    <div class="row">
+      <a class="btn btn-primary" (click)="commanderPizzaEnregistrer()">Commander cette <br> pizza</a>
+    </div>
+    <div class="row">
+      <a class="btn btn-primary" routerLink="/commande">Personnaliser ma pizza</a>
+    </div>
+  </div>
+</div>
+<div *ngIf="isLoading">
+  <img id="loader" src="assets/Images/Loading_icon.gif">
+</div>
