@@ -41,7 +41,7 @@ export class CarteComponent {
             //console.log(`Pizza : ${nom} \n Base : ${base} \n Pate : ${pate} \n Prix : ${prix}`)
             
           }
-          console.log(this.pizzas)
+          
         },
         (err) => console.log(err)
       )
@@ -50,14 +50,13 @@ export class CarteComponent {
 
     public valueChanged(event : any){
       
-      console.log(event.target.value)
       this.pizzasFilter = new Array<Pizza>()
       for(let i = 0; i< this.pizzas.length; i++){
         if (this.pizzas[i].prix <= event.target.value){
           this.pizzasFilter.push(this.pizzas[i])
         }
       }
-      console.log(this.pizzasFilter)
+    
     }
 
     
