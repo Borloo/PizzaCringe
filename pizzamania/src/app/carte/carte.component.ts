@@ -51,7 +51,7 @@ export class CarteComponent {
       let pizzasFilter = new Array<Pizza>()
       console.log(event.target.value)
       for(let i = 0; i< this.pizzas.length; i++){
-        if (this.pizzas[i].prix < event.target.value){
+        if (this.pizzas[i].prix <= event.target.value){
           pizzasFilter.push(this.pizzas[i])
         }
       }
