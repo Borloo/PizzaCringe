@@ -4,7 +4,8 @@ let cfg = {
     "prix" : 0,
     "id" : 0,
     "isSuccess" : false,
-    "isAlreadyCommand" : false
+    "isAlreadyCommand" : false,
+    "isLoading" : false
 }
 
 export {cfg};
