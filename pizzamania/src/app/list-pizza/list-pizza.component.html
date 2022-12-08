@@ -3,11 +3,11 @@
 </div>
 <div *ngIf="isLoading == false">
   <div class="slidecontainer">
-    5€ <input type="range" min="5" max="12" value="12" class="slider" id="myRange" (input)="valueChanged($event)"> 12€
+    5€ <input type="range" min="5" max="12" value="12" class="slider" id="myRange" [(ngModel)]="maxValue"> 12€
    </div>
    
  
- <div *ngFor="let pizza of pizzasFilter">
+ <div *ngFor="let pizza of getListePizzaFiltre()">
   <div class="row">
     <div class="col-sm-6">
       <div class="card" style="width: 18rem;">

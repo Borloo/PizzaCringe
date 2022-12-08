@@ -14,7 +14,7 @@ export class ListPizzaComponent implements OnInit{
 
   isLoading = false;
   pizzas = new Array<Pizza>();
-  pizzasFilter = new Array<Pizza>()
+  maxValue = 12;
 
   constructor(private listPizzaService: ListPizzaService, private router: Router, public pizzaService: PizzaService) {}
 
@@ -73,14 +73,15 @@ export class ListPizzaComponent implements OnInit{
 
   }
 
-  public valueChanged(event : any){
-      
-    this.pizzasFilter = new Array<Pizza>()
+  public getListePizzaFiltre(): Pizza[]{
+    let pizzasFilter = new Array<Pizza>()
+
     for(let i = 0; i< this.pizzas.length; i++){
-      if (this.pizzas[i].prix <= event.target.value){
-        this.pizzasFilter.push(this.pizzas[i])
+      if (this.pizzas[i].prix <= this.maxValue){
+        pizzasFilter.push(this.pizzas[i])
       }
     }
+    return pizzasFilter;
   
   }
 }
