@@ -9,7 +9,7 @@
   </div>
 
 
-  <div *ngFor="let pizza of pizzas">
+  <div *ngFor="let pizza of getListePizzaFiltre()">
     <div class="row">
       <div class="col-sm-6">
         <div class="card" style="width: 18rem;">
@@ -17,15 +17,10 @@
           <div class="card-body">
             <h5 class="card-title">{{pizza.nom}}</h5>
             <p class="card-text">{{pizza.ingredient}}</p>
-            <a class="btn btn-primary" (click)="commanderPizza()">Go somewhere</a>
+            <a class="btn btn-primary" (click)="commanderPizza()">Commander !</a>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!--<div id="body" *ngFor="let pizza of pizzas">
-    <div class="row">
-
-    </div>
-  </div>-->
 </div>

@@ -82,7 +82,7 @@ export class ListPizzaComponent implements OnInit{
       }
     }
 
-    return this.pizzas = pizzasFilter;
+    return pizzasFilter;
 
   }
 }
