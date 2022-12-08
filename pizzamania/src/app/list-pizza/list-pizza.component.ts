@@ -44,7 +44,7 @@ export class ListPizzaComponent implements OnInit{
     this.isLoading = false;
     let listeIngr;
     let tabPizzas = new Array<Pizza>();
-    
+
 
     for(let i = 0; i< next.length; i++) {
       listeIngr = new Array()
@@ -73,7 +73,7 @@ export class ListPizzaComponent implements OnInit{
 
   }
 
-  public getListePizzaFiltre(): Pizza[]{
+  public getListePizzaFiltre(){
     let pizzasFilter = new Array<Pizza>()
 
     for(let i = 0; i< this.pizzas.length; i++){
@@ -81,7 +81,8 @@ export class ListPizzaComponent implements OnInit{
         pizzasFilter.push(this.pizzas[i])
       }
     }
-    return pizzasFilter;
-  
+
+    return this.pizzas = pizzasFilter;
+
   }
 }
