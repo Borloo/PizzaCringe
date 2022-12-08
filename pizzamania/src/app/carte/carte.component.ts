@@ -14,6 +14,7 @@ export class CarteComponent {
       
     }
     pizzas = new Array<Pizza>()
+    pizzasFilter = new Array<Pizza>()
     
     public goToCarte(){
       this.router.navigate(['/carte'])
@@ -34,7 +35,7 @@ export class CarteComponent {
             if (res[i].magret) listeIngr.push("Magret")
             if (res[i].miel) listeIngr.push("Miel")
             
-            let pizza = new Pizza(res[i].base,listeIngr, res[i].prix, res[i].nom)
+            let pizza = new Pizza(res[i].base,listeIngr, res[i].prix, res[i].nom, res[i].image)
 
             this.pizzas.push(pizza)
             //console.log(`Pizza : ${nom} \n Base : ${base} \n Pate : ${pate} \n Prix : ${prix}`)
@@ -48,14 +49,15 @@ export class CarteComponent {
     }
 
     public valueChanged(event : any){
-      let pizzasFilter = new Array<Pizza>()
+      
       console.log(event.target.value)
+      this.pizzasFilter = new Array<Pizza>()
       for(let i = 0; i< this.pizzas.length; i++){
         if (this.pizzas[i].prix <= event.target.value){
-          pizzasFilter.push(this.pizzas[i])
+          this.pizzasFilter.push(this.pizzas[i])
         }
       }
-      console.log(pizzasFilter)
+      console.log(this.pizzasFilter)
     }
 
     

@@ -1,12 +1,12 @@
 <button (click)="test()"></button>
 
-
-
-<div *ngFor="let pizza of pizzas">
-    {{pizza.nom}}
-</div>
-
 <div class="slidecontainer">
    5€ <input type="range" min="5" max="12" value="12" class="slider" id="myRange" (input)="valueChanged($event)"> 12€
   </div>
   
+
+<div *ngFor="let pizza of pizzasFilter">
+    {{pizza.nom}}
+</div>
+
+

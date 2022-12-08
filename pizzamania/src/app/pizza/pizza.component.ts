@@ -12,7 +12,7 @@ export class PizzasComponent  {
 
 export class Pizza {
 
-  constructor(public base: string, public ingredient: Array<any>, public prix: number, public nom ="") {
+  constructor(public base: string, public ingredient: Array<any>, public prix: number, public nom ="", public img="") {
 
   }
   public incrementerPrix () {
