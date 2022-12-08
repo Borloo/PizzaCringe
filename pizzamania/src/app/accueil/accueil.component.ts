@@ -18,7 +18,7 @@ export class AccueilComponent {
 
   pizzaString = window.localStorage.getItem('pizza');
   // @ts-ignore
-  pizza:Pizza = JSON.parse(this.pizzaString)
+  pizza:Pizza = JSON.parse( this.pizzaString)
   commande:CommandeComponent = new CommandeComponent(this.router, this.pizzaService);
 
   base = this.pizza.base;

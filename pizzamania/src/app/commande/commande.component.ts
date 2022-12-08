@@ -63,10 +63,10 @@ export class CommandeComponent implements OnInit{
   isSuccess = false;
   constructor(private router:Router ,private PizzaService: PizzaService){}
   ngOnInit(): void {}
-  public commander(){
+  public commander(command: CommandeComponent = this){
     cfg.isLoading = true;
     this.isLoading = true;
-    this.PizzaService.commanderPizza(this).subscribe(
+    this.PizzaService.commanderPizza(command).subscribe(
       (next) => {
         setTimeout(() => {
           this.isSuccess = true

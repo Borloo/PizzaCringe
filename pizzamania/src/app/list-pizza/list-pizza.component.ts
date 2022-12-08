@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ListPizzaService} from "./list-pizza.service";
 import {Pizza} from "../pizza/pizza.component";
+import {CommandeComponent} from "../commande/commande.component";
+import {Router} from "@angular/router";
+import {PizzaService} from "../pizza/pizza.service";
 
 @Component({
   selector: 'app-list-pizza',
@@ -10,24 +13,26 @@ import {Pizza} from "../pizza/pizza.component";
 export class ListPizzaComponent implements OnInit{
 
   isLoading = false;
-  pizzas = new Array<Pizza>()
+  pizzas = new Array<Pizza>();
 
-  constructor(private listPizzaService: ListPizzaService) {
-    this.pizzas = this.listPizza();
+  constructor(private listPizzaService: ListPizzaService, private router: Router, public pizzaService: PizzaService) {}
+
+  commande:CommandeComponent = new CommandeComponent(this.router, this.pizzaService);
+
+  ngOnInit(): void {
+    this.listPizza();
   }
 
-  ngOnInit(): void {}
 
   public listPizza(): any{
 
+    this.isLoading = true;
     this.listPizzaService.getListPizza().subscribe(
       (next) => {
         this.onCallSucess(next);
-        this.isLoading = true;
       },
       (err) => {
         this.onCallError(err);
-        this.isLoading = true;
       }
     );
 
@@ -46,19 +51,23 @@ export class ListPizzaComponent implements OnInit{
       if (next[i].magret) listeIngr.push("Magret")
       if (next[i].miel) listeIngr.push("Miel")
 
-      let pizza = new Pizza(next[i].base, listeIngr, next[i].prix, next[i].nom, next[i].image)
+      let pizza = new Pizza(next[i].base, listeIngr, next[i].prix, next[i].nom, next[i].image);
 
-      tabPizzas.push(pizza)
+      this.pizzas.push(pizza);
     }
-
-    console.log(tabPizzas);
-    return tabPizzas;
 
   }
 
   private onCallError(err: any) {
 
     this.isLoading = false;
+
+  }
+
+  public commanderPizza(){
+
+    this.isLoading = true;
+    this.commande.commander(this.commande);
 
   }
 }
