@@ -1,0 +1,54 @@
+<div *ngIf="isLoading == true">
+  <img id="loader" src="assets/Images/Loading_icon.gif">
+</div>
+<div *ngIf="isLoading == false">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card" style="width: 18rem;">
+        <img [src]="pizzas[0].img" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{pizzas[0].nom}}</h5>
+          <p class="card-text">{{pizzas[0].ingredient}}</p>
+          <a class="btn btn-primary" (click)="commanderPizza()">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card" style="width: 18rem;">
+        <img [src]="pizzas[1].img" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{pizzas[1].nom}}</h5>
+          <p class="card-text">{{pizzas[1].ingredient}}</p>
+          <a class="btn btn-primary" (click)="commanderPizza()">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card" style="width: 18rem;">
+        <img [src]="pizzas[2].img" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{pizzas[2].nom}}</h5>
+          <p class="card-text">{{pizzas[2].ingredient}}</p>
+          <a class="btn btn-primary" (click)="commanderPizza()">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card" style="width: 18rem;">
+        <img [src]="pizzas[3].img" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{pizzas[3].nom}}</h5>
+          <p class="card-text">{{pizzas[3].ingredient}}</p>
+          <a class="btn btn-primary" (click)="commanderPizza()">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--<div id="body" *ngFor="let pizza of pizzas">
+    <div class="row">
+
+    </div>
+  </div>-->
+</div>
