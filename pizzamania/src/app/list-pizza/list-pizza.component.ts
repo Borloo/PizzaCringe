@@ -14,6 +14,7 @@ export class ListPizzaComponent implements OnInit{
 
   isLoading = false;
   pizzas = new Array<Pizza>();
+  pizzasFilter = new Array<Pizza>()
 
   constructor(private listPizzaService: ListPizzaService, private router: Router, public pizzaService: PizzaService) {}
 
@@ -43,6 +44,7 @@ export class ListPizzaComponent implements OnInit{
     this.isLoading = false;
     let listeIngr;
     let tabPizzas = new Array<Pizza>();
+    
 
     for(let i = 0; i< next.length; i++) {
       listeIngr = new Array()
@@ -69,5 +71,16 @@ export class ListPizzaComponent implements OnInit{
     this.isLoading = true;
     this.commande.commander(this.commande);
 
+  }
+
+  public valueChanged(event : any){
+      
+    this.pizzasFilter = new Array<Pizza>()
+    for(let i = 0; i< this.pizzas.length; i++){
+      if (this.pizzas[i].prix <= event.target.value){
+        this.pizzasFilter.push(this.pizzas[i])
+      }
+    }
+  
   }
 }
