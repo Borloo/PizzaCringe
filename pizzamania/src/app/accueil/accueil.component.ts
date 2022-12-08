@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { Router} from "@angular/router";
 import { cfg } from "src/config";
 import {Pizza} from "../pizza/pizza.component";
-import {PizzaService} from "../pizza.service";
+import {PizzaService} from "../pizza/pizza.service";
 import {CommandeComponent} from "../commande/commande.component";
+import {ListPizzaService} from "../list-pizza/list-pizza.service";
 
 @Component({
   selector: 'app-accueil',
@@ -11,7 +12,7 @@ import {CommandeComponent} from "../commande/commande.component";
   styleUrls: ['./accueil.component.css']
 })
 export class AccueilComponent {
-  constructor(private router:Router, public pizzaService: PizzaService){}
+  constructor(private router:Router, public pizzaService: PizzaService, public listPizzaService: ListPizzaService){}
 
   isAlreadyCommand = cfg.isAlreadyCommand;
 
@@ -31,5 +32,9 @@ export class AccueilComponent {
   public commanderPizzaEnregistrer() {
     this.isLoading = true
     this.commande.commander();
+  }
+
+  public listePizza(){
+    this.listPizzaService.getListPizza();
   }
 }

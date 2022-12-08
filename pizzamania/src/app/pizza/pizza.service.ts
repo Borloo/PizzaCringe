@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import { CommandeComponent } from './commande/commande.component';
+import { CommandeComponent } from '../commande/commande.component';
 
 
 @Injectable({

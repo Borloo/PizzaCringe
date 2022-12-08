@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { PizzaService } from '../pizza.service';
+import { PizzaService } from '../pizza/pizza.service';
 import { OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { cfg } from 'src/config';
 import { Router } from '@angular/router';
-import { RecapComponent } from '../recap/recap.component';
 import {Pizza} from "../pizza/pizza.component";
 
 export class formModelPizza {
@@ -16,7 +15,6 @@ export class formModelPizza {
   isSuccess = false
 
   constructor(){}
-
 
   prix(): number{
     cfg.prix = 0
