@@ -4,6 +4,7 @@ import {Pizza} from "../pizza/pizza.component";
 import {CommandeComponent} from "../commande/commande.component";
 import {Router} from "@angular/router";
 import {PizzaService} from "../pizza/pizza.service";
+import { cfg } from 'src/config';
 
 @Component({
   selector: 'app-list-pizza',
@@ -66,7 +67,11 @@ export class ListPizzaComponent implements OnInit{
 
   }
 
-  public commanderPizza(){
+  public commanderPizza(base: any, ingredients : any){
+    cfg.ingredients = ingredients
+    cfg.base = base
+
+
 
     this.isLoading = true;
     this.commande.commander(this.commande);

@@ -17,7 +17,7 @@
           <div class="card-body">
             <h5 class="card-title">{{pizza.nom}}</h5>
             <p class="card-text">{{pizza.ingredient}}</p>
-            <a class="btn btn-primary" (click)="commanderPizza()">Commander !</a>
+            <a class="btn btn-primary" (click)="commanderPizza(pizza.base, pizza.ingredient)">Commander !</a>
           </div>
         </div>
       </div>
