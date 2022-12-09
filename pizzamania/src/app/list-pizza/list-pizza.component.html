@@ -22,7 +22,7 @@
           <img [src]="pizza.img" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{pizza.nom}}</h5>
-            <p class="card-text">{{pizza.ingredient}}</p>
+            <p class="card-text" style="color: black">{{pizza.ingredient}}</p>
             <a class="btn btn-primary" (click)="commanderPizza(pizza.base, pizza.ingredient)">Commander !</a>
           </div>
         </div>
