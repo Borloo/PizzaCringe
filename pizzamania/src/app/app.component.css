@@ -25,6 +25,7 @@ table {
   padding-right: 50%;
   background-image: url("../assets/Images/texture-fond-table.jpg");
   background-position: center;
+  width: 40%;
 }
 #title {
   color: #78d112;

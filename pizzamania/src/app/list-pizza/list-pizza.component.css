@@ -19,3 +19,9 @@ a.btn-primary {
 .slider {
   width: 100%;
 }
+.col-sm-6{
+  text-align: center;
+}
+.card{
+  margin-left: 50%;
+}
