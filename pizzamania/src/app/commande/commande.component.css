@@ -3,16 +3,20 @@ input.btn-primary {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2%;
-  background-color: orange;
+  background-color: #78d112;
   color: black;
-  border-color: orangered;
+  border-color: forestgreen;
 }
 h4 {
   text-align: center;
+  color: white;
 }
 p#prix {
   text-align: center;
 }
 #loader {
   background-color: lightgrey;
+}
+input[name="ingrédients"] {
+  color: white;
 }

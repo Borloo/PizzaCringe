@@ -6,6 +6,7 @@ tfoot {
   border: solid black;
   margin-bottom: 3%;
   margin-top: 3%;
+  color: #78d112;
 }
 thead {
   text-align: center;
@@ -22,8 +23,9 @@ tbody {
 table {
   margin : auto;
   padding-right: 50%;
-  background-color: lightgrey;
+  background-image: url("../assets/Images/texture-fond-table.jpg");
+  background-position: center;
 }
 #title {
-  color : orange;
+  color: #78d112;
 }

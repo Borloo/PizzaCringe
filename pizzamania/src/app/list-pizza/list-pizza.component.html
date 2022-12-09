@@ -3,9 +3,15 @@
 </div>
 <div *ngIf="isLoading == false">
   <div class="row" id="row">
-    <div class="slidecontainer">
-      5€ <input type="range" min="5" max="12" value="12" class="slider" id="myRange" [(ngModel)]="maxValue"> 12€
-     </div>
+    <div class="col-sm-4">
+      <p>5€</p>
+    </div>
+    <div id="slider" class="col-sm-4">
+      <input type="range" min="5" max="12" value="12" class="slider" id="myRange" [(ngModel)]="maxValue" style="position: center">
+    </div>
+    <div class="col-sm-4">
+      <p>12€</p>
+    </div>
   </div>
 
 

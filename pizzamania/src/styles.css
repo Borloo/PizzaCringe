@@ -3,4 +3,10 @@ body {
   margin-top: 6%;
   margin-bottom: 6%;
   background-image: url('terrain.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+p {
+  color: white;
 }
