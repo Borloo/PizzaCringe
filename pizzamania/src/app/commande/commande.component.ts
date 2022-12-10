@@ -95,6 +95,7 @@ export class CommandeComponent implements OnInit{
     return this.router.navigate(['recap'])
   }
   public onCallError(err: HttpErrorResponse){
+    
     console.log(err);
     cfg.isLoading = false;
     cfg.isAlreadyCommand = true;
